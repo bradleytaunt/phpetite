@@ -1,0 +1,426 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  --textdark:   #181818;
+  --textlight:  #686868;
+  --bgcolor:    #fff;
+  --highlight:  crimson;
+  
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  * {
+    --textdark:   #dadada;
+    --textlight:  #888;
+    --bgcolor:    #181818;
+    --highlight:  orange;
+  }
+  pre {
+    background:rgba(255,255,255,.03);
+  }
+}
+
+body {
+  color: var(--textdark);
+  background: var(--bgcolor);
+  font: 16px / 1.44 'Verdana', system-ui, sans-serif;
+  position: relative;
+  max-width: 45em; /* column width */
+  margin: 0 auto;
+}
+
+/* Show & hide sections */
+
+section, section:target ~ section:last-of-type {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+section:target, section:last-of-type {
+  height: auto;
+  overflow: visible;
+  padding: calc(5vw + 2.6em) 4vw 1.6em;
+}
+  
+section:focus {
+  outline: 0;
+}
+
+/* Webkit fix for overflowing text? */
+
+section {
+  overflow-wrap: break-word;
+  width: 100%;
+}
+
+/* Vertical spacing */
+
+section * + * {
+  margin-top: .7em;
+}
+
+/* Header */
+
+header {
+  padding: 5vw 4vw 0 4vw;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.site-info {
+  margin-top: 1em;
+}
+
+/* Footer */
+
+footer {
+  padding: 0 4vw 5vw 4vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: var(--textlight);
+}
+
+/* Stop the homepage content from appearing as a footer link */
+footer .home-content {
+  display: none;
+}
+
+footer * + * {
+  margin-top: 0;
+}
+
+/* Table of contents */
+
+ul.toc {
+  overflow: hidden;
+}
+
+ul.toc * + * {
+  margin: 0;
+}
+
+ul.toc li {
+  line-height:1.5;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
+}
+
+ul.toc li a {
+  color: var(--textdark);
+  flex: 1;
+}
+
+ul.toc li a span {
+  background: var(--bgcolor);
+  padding-right: .3em;
+}
+
+ul.toc li time {
+  z-index: 1;
+  padding-left:.3em;
+  color: var(--textlight);
+  background: var(--bgcolor);
+}
+
+ul.toc li a:after {
+  width: 100%;
+  font-size: .55em;
+  position: absolute;
+  bottom: .4em;
+  color: var(--textlight);
+  white-space: nowrap;
+  content:
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .'
+  ' . . . . . . . . . . . . . . . . . . . . . .';
+}
+
+/* General */
+
+a {
+  color: var(--highlight);
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {text-decoration: underline;}
+}
+
+a[href*="//"]:after {
+  font-size: .65em;
+  content: "\2197";
+  display: inline-block;
+  color: var(--textlight);
+}
+
+a[href*="//"]:hover:after {
+  color: inherit;
+}
+
+/* Headings */
+
+header h1 {
+  margin-bottom: 1em;
+}
+header h1 a {
+  font-weight: normal;
+  display: block;
+}
+
+section h1 {
+  font-size: 1.4em;
+  line-height:1.5;
+}
+
+header h1, h2, h3, h4, strong, b, dt {
+  font-size: 1em;
+}
+
+* + h2, * + h3, * + h4 {
+  margin-top: 1.4em;
+}
+
+h2.cute, h3 {
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .9em;
+  font-weight: 400;
+}
+
+/* Lists */
+
+li, dd {
+  margin-left: 1.5em;
+}
+
+li + li, li ol, li ul {
+  margin-top: .1em;
+}
+
+.footnotes li {
+  color: var(--textlight);
+  margin-top:.5em;
+  max-width:95%;
+}
+
+/* Images */
+
+img {
+  display: block;
+  max-width: 100%;
+  min-height:6em;
+  height: auto;
+  position: relative;
+}
+
+img:after { /* style offline images */
+  content: attr(alt);
+  display: grid;
+  align-content:center;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: .8em;
+  text-align:center;
+  color: var(--textlight);
+  border:1px dashed var(--textlight);
+  background-color: var(--bgcolor);
+}
+
+figure {
+  padding: 1em;
+}
+
+figcaption, small, .footnotes {
+  font-size: .865em;
+}
+
+/* Other elements */
+
+blockquote {
+  padding: 0 1em;
+}
+
+cite {
+  font-style: normal;
+}
+
+abbr[title] {
+  text-decoration: none;
+  cursor: help;
+}
+
+a abbr[title] {
+  cursor: pointer;
+  color: inherit;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid;
+  opacity: .1;
+  margin: 1.4em 0;
+}
+
+sup {
+  line-height: 1;
+  font-size: .75em;
+  margin-left: .05em;
+}
+
+code, kbd {
+  font-family: ui-monospace, SF Mono, SFMono-Regular, Menlo, Andale Mono, monospace;
+  color: var(--textlight);
+  font-size: .9em;
+  overflow-wrap: break-word;
+}
+
+kbd {
+  box-shadow:0 .5px 1px;
+  border-radius:2px;
+  padding:.05em .325em;
+  font-size:.85em;
+  margin: 0 .1em;
+}
+
+pre {
+  line-height: 1.55;
+  overflow: auto;
+  background: rgba(0,0,0,.03);
+  padding: .5em .85em .6em .85em;
+  border-radius: 4px;
+}
+
+pre code {
+  font-size:.9em;
+  position: relative;
+  display:block;
+  overflow-wrap: normal;
+}
+
+pre code:after {
+  content: attr(class);
+  position: absolute;
+  right: -.6em;
+  top: -.3em;
+  text-transform: uppercase;
+  font-size: .7em;
+  opacity:.45;
+}
+
+input, select, textarea, button {
+  font: inherit;
+  font-size: .85em;
+  line-height: inherit;
+  border: 0;
+  box-shadow: 0 0 .05em;
+  padding: .2em .4em;
+  width: 100%;
+}
+
+/* Tables */
+
+table {
+  border-collapse: collapse;
+  min-width: 100%;
+  margin: 1em 0;
+}
+
+thead {
+  text-align: left;
+  border-bottom: 1px solid var(--textlight);
+}
+
+tr + tr {
+  border-top: 1px solid var(--textlight);
+}
+
+th, td {
+  padding: .4em .3em .2em;
+}
+
+/* Disable footnotes #links */
+
+sup a {
+  color: currentColor;
+  pointer-events: none;
+}
+
+a.footnote-backref {
+  display: none;
+}
+
+/* Print */
+
+@media print {
+  
+  * {
+    --bgcolor: #fff;
+  }
+  
+  header {
+    position: relative;
+  }
+  
+  section {
+    height: auto;
+    overflow: visible;
+    
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: block;
+    padding: 2em 4vw;
+  }
+
+  section * {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  footer {
+    display: none;
+  }
+  
+}
+
+/* Smaller screens */
+
+@media only screen and (max-width: 900px) {
+  body {font-size: 21.5px;}
+}
+
+@media only screen and (max-width: 640px) {
+  body {font-size: 20.5px;}
+}
+
+@media only screen and (max-width: 500px) {
+  body {font-size: 19.5px;}
+  footer small {font-size: 1em;}
+  blockquote, figure {padding-left: 4vw;padding-right: 4vw;}
+  ul.toc li a {padding-bottom:.15em;}
+  footer small:first-of-type, ul.toc li a:after, ul.toc time {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  body {font-size: 18px;}
+}
