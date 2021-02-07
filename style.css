@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
   
   --textdark:   #181818;
   --textlight:  #686868;
@@ -71,22 +75,35 @@ header {
   z-index: 1;
 }
 
-.site-info {
-  margin-top: 1em;
-}
-
 /* Footer */
 
 footer {
-  padding: 0 4vw 5vw 4vw;
+  color: var(--textlight);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: var(--textlight);
+  padding: 1em 4vw 5vw 4vw;
+}
+
+footer .footer-links {
+  display: block;
+  width: 100%;
+}
+
+footer .footer-links a {
+  display: inline-block;
+}
+
+footer .footer-links span.divider {
+  display: inline-block;
+  margin: 0 5px;
+}
+footer .footer-links span.divider:last-of-type {
+  display: none;
 }
 
 /* Stop the homepage content from appearing as a footer link */
-footer .home-content {
+footer .footer-links a.home-content, footer .footer-links a.home-content + span.divider {
   display: none;
 }
 
@@ -113,7 +130,6 @@ ul.toc li {
 }
 
 ul.toc li a {
-  color: var(--textdark);
   flex: 1;
 }
 
@@ -181,6 +197,7 @@ header h1 a {
 section h1 {
   font-size: 1.4em;
   line-height:1.5;
+  padding-top: 1em;
 }
 
 header h1, h2, h3, h4, strong, b, dt {
@@ -393,34 +410,21 @@ a.footnote-backref {
     break-inside: avoid;
   }
   
-  footer {
-    display: none;
-  }
-  
-}
-
-/* Smaller screens */
-
-@media only screen and (max-width: 900px) {
-  body {font-size: 21.5px;}
-}
-
-@media only screen and (max-width: 640px) {
-  body {font-size: 20.5px;}
 }
 
 @media only screen and (max-width: 500px) {
-  body {font-size: 19.5px;}
-  footer small {font-size: 1em;}
-  blockquote, figure {padding-left: 4vw;padding-right: 4vw;}
-  ul.toc li a {padding-bottom:.15em;}
-  footer small:first-of-type, ul.toc li a:after, ul.toc time {
+  footer .footer-links a { display: block; margin: 0.2em 0; }
+  footer .footer-links span.divider { display: none; }
+  blockquote, figure { padding-left: 4vw; padding-right: 4vw; }
+  ul.toc li {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+  ul.toc li a { padding-bottom:1em; }
+  ul.toc li time { font-size: .8em; padding-left: 0; }
+  ul.toc li a:after {
     height: 0;
     overflow: hidden;
     position: absolute;
   }
-}
-
-@media only screen and (max-width: 370px) {
-  body {font-size: 18px;}
 }

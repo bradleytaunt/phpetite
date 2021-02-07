@@ -79,7 +79,7 @@ foreach ($files_pages as $file_page) {
   $filename_no_ext_page = substr($file_page, 0, strrpos($file_page, "."));    
   $file_path_page = __DIR__.'/content/_pages/'.$file_page;
   $file_page = fopen($file_path_page, 'r');
-  $page_title = trim(fgets($file_page),'#');
+  $page_title = trim(fgets($file_page),'# ');
   $page_slug = create_slug($filename_no_ext_page);
   fclose($file_page);
     
@@ -97,7 +97,7 @@ foreach ($files_pages as $file_page) {
   $parsedown->footnoteBackReferenceAttributes = function() {return ['id' => null];};
 
   $pages .= '<section tabindex="0" role="document" aria-label="'.$page_title.'" id="'.$page_slug.'">'.$parsedown->text(file_get_contents($file_path_page)).'</section>';
-  $pages_footer .='<a class="' . (($page_slug=="home-content")? 'home-content' : '') . '" href="#'.$page_slug.'">'.$page_title.'</a>';
+  $pages_footer .='<a class="'.$page_slug.'" href="#'.$page_slug.'">'.$page_title.'</a><span class="divider">/</span>';
   
 }
 
