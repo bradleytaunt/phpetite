@@ -9,7 +9,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // !!!
 
-
 // Dependencies
 include('dependencies/Parsedown.php');
 include('dependencies/ParsedownExtra.php');
@@ -20,6 +19,7 @@ $toc = '';
 $posts = '';
 $pages = '';
 $pages_footer = '';
+$rss_items = '';
 
 function create_slug($string){
   $string = strtolower($string);
@@ -38,6 +38,9 @@ foreach (new DirectoryIterator(__DIR__.'/content/') as $file) {
   }
 }
 rsort($files);
+
+// Include custom site configurations
+include('_config.php');
 
 foreach ($files as $file) {
 
@@ -63,6 +66,16 @@ foreach ($files as $file) {
 
   $toc .= '<li><a href="#'.$post_slug.'"><span>'.$post_title.'</span></a> <time datetime="'.substr($filename_no_ext, 0, 10).'">'.substr($filename_no_ext, 0, 10).'</time></li>';
   $posts .= '<section tabindex="0" role="document" aria-label="'.$post_title.'" id="'.$post_slug.'">'.$parsedown->text(file_get_contents($file_path)).'</section>';
+
+  $rss_items .= '
+  <entry>
+    <title>'.$post_title.'</title>
+    <link href="'.$site_url.'#'.$post_slug.'"/>
+    <updated>'.substr($filename_no_ext, 0, 10).'</updated>
+    <id>- '.$post_title.'</id>
+    <content type="html">'.str_replace('&nbsp;', ' ', $parsedown->text(file_get_contents($file_path))).'</content>
+  </entry>
+  ';
   
 }
 

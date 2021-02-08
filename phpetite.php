@@ -3,17 +3,8 @@
 // Render each of the Markdown files from a folder in a <section>, with date-and-title as #id.
 
 include '_system.php';
-
-// Your site title and meta description
-$site_title = 'PHPetite';
-$site_desc = 'A single file, static blog generated from PHP';
-
 // $site_info takes all forms of HTML. Leave blank if you just want blog posts on the homepage
 $site_info = '<div class="site-info">' . $parsedown->text(file_get_contents('content/_pages/home-content.md')) .'</div>';
-
-// You probably don't need to change these :P
-$site_style = 'style.css';
-$site_icon = 'img/icon.png';
 
 ?>
 <!doctype html>

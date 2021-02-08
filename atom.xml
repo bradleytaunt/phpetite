@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>PHPetite</title>
+ <link href="https://yourdomain.com/atom.xml" rel="self"/>
+ <link href="https://yourdomain.com"/>
+ <id>https://yourdomain.com</id>
+ <author>
+   <name>Your Name</name>
+   <email>hello@youremailaddress.com</email>
+ </author>
+
+ 
+  <entry>
+    <title> Hello, World!
+</title>
+    <link href="https://yourdomain.com#2021-01-11-hello-world"/>
+    <updated>2021-01-11</updated>
+    <id>-  Hello, World!
+</id>
+    <content type="html"><h1>Hello, World!</h1>
+<p>A <strong>"Hello, World!" program</strong> generally is a <a href="https://en.wikipedia.org/wiki/Computer_program" title="Computer program">computer program</a> that outputs or displays the message "Hello, World!". Such a program is very simple in most <a href="https://en.wikipedia.org/wiki/Programming_language" title="Programming language">programming languages</a>, and is often used to illustrate the basic <a href="https://en.wikipedia.org/wiki/Syntax" title="Syntax">syntax</a> of a programming language. It is often the first program written by people learning to code.<sup><a href="#" class="footnote-ref">2</a></sup>  It can also be used as a <a href="https://en.wikipedia.org/wiki/Sanity_test" title="Sanity test">sanity test</a> to make sure that a computer language is correctly installed, and that the operator understands how to use it.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li>
+<p>James A Langbridge (3 December 2013). <a href="https://books.google.com/books?id=y51NAgAAQBAJ&amp;pg=PA74"><em>Professional Embedded ARM Development</em></a>. <a href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="https://en.wikipedia.org/wiki/Special:BookSources/9781118887820" title="Special:BookSources/9781118887820">9781118887820</a>.&#160;<a href="#" class="footnote-backref">&#8617;</a></p>
+</li>
+</ol>
+</div></content>
+  </entry>
+  
+  <entry>
+    <title> How to generate this blog
+</title>
+    <link href="https://yourdomain.com#2021-01-10-how-to-generate-this-blog"/>
+    <updated>2021-01-10</updated>
+    <id>-  How to generate this blog
+</id>
+    <content type="html"><h1>How to generate this blog</h1>
+<p>Get <a href="https://github.com/bradleytaunt/phpetite" title="PHPetite at Github">PHPetite</a> to convert Markdown files into a single <abbr title="Hyper Text Markup Language">HTML</abbr> file with inline, compressed <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
+<ol>
+<li>Write posts in <code>/content</code></li>
+<li>From the command-line run:</li>
+</ol>
+<pre><code class="bash">bash build.sh</code></pre>
+<p>This will generate both the single file <abbr title="Hyper Text Markup Language">HTML</abbr> page, along with an <code>atom.xml</code> file for the use of an optional RSS feed.</p>
+<h2>Advanced options</h2>
+<p>Looking for more advanced configurations, such as creating custom pages, editing homepage content and styling? Take a look at the <a href="https://github.com/bradleytaunt/phpetite" title="PHPetite at Github">Github repo</a> or the official website <a href="https://phpetite.org" title="PHPetite">phpetite.org</a>.</p>
+<p>Thank you, have a nice day.</p></content>
+  </entry>
+  
+  <entry>
+    <title> Markdown examples
+</title>
+    <link href="https://yourdomain.com#2021-01-09-markdown-examples"/>
+    <updated>2021-01-09</updated>
+    <id>-  Markdown examples
+</id>
+    <content type="html"><h1><abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr> examples</h1>
+<p>On top of plain <abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr>, <a href="https://michelf.ca/projects/php-markdown/extra"><abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr> Extra</a> adds support for footnotes, abbreviations, definition lists, tables, <code>class</code> and <code>id</code> attributes, fenced code blocks, and <abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr> inside <abbr title="Hypertext Markup Language">HTML</abbr> blocks.</p>
+<p>Additionally, images are properly enclosed in figure elements (with optional figcaption), and the <code>loading="lazy"</code> attribute is added.</p>
+<hr />
+<p>This is <strong>bold</strong>, <em>italic</em>,  this is an <a href="#2021-01-11-hello-world">internal link</a>, this is <del>not</del>  <code>code</code>, press <kbd>alt</kbd>.</p>
+<figure><img src="img/image.png" alt="This is the image alt text" title="This is the image title." width="1280" height="800" loading="lazy" /><figcaption>This is the image caption (line begins with a space)</figcaption>
+</figure>
+<figure><img src="img/image-missing.png" alt="This is the alt text of a missing image" title="This is the missing image title." width="1280" height="800" loading="lazy" /></figure>
+<blockquote>
+<p>This text is in a blockquote.</p>
+</blockquote>
+<h2>This is a level 2 heading</h2>
+<h3>This is a level 3 heading</h3>
+<ul>
+<li>This</li>
+<li>is</li>
+<li>a list</li>
+</ul>
+<ol start="0">
+<li>This</li>
+<li>is</li>
+<li>an</li>
+<li>ordered list</li>
+</ol>
+<pre><code class="txt">This is
+    preformatted
+  text.</code></pre>
+<table>
+<thead>
+<tr>
+<th>this is a table</th>
+<th>header</th>
+<th style="text-align: right;">this column is right-aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>these</td>
+<td>content</td>
+<td style="text-align: right;">1234</td>
+</tr>
+<tr>
+<td>are</td>
+<td>cells</td>
+<td style="text-align: right;">56789</td>
+</tr>
+</tbody>
+</table>
+<p>This sentence has a footnote.<sup><a href="#" class="footnote-ref">2</a></sup></p>
+<div class="footnotes">
+<hr />
+<ol>
+<li>
+<p>This is a footnote&#160;<a href="#" class="footnote-backref">&#8617;</a></p>
+</li>
+</ol>
+</div></content>
+  </entry>
+  
+</feed>
