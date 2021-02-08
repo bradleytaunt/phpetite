@@ -69,11 +69,11 @@ foreach ($files as $file) {
 
   $rss_items .= '
   <entry>
-    <title>'.$post_title.'</title>
+    <title>'.trim($post_title, " \t\n\r").'</title>
     <link href="'.$site_url.'#'.$post_slug.'"/>
-    <updated>'.substr($filename_no_ext, 0, 10).'</updated>
-    <id>- '.$post_title.'</id>
-    <content type="html">'.str_replace('&nbsp;', ' ', $parsedown->text(file_get_contents($file_path))).'</content>
+    <updated>'.substr($filename_no_ext, 0, 10).'T00:00:00+00:00</updated>
+    <id>'.$site_url.'/#'.$post_slug.'</id>
+    <content type="html">'.htmlspecialchars($parsedown->text(file_get_contents($file_path)), ENT_XML1, 'UTF-8').'</content>
   </entry>
   ';
   
