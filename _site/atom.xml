@@ -3,7 +3,7 @@
     <title>PHPetite</title>
     <link href="https://yourdomain.com/atom.xml" rel="self"/>
     <link href="https://yourdomain.com"/>
-    <updated>2021-02-08T13:41:40-05:00</updated>
+    <updated>2021-02-09T10:17:24-05:00</updated>
     <id>https://yourdomain.com/</id>
     <author>
       <name>Your Name</name>
@@ -35,10 +35,12 @@
 &lt;p&gt;Get &lt;a href="https://github.com/bradleytaunt/phpetite" title="PHPetite at Github"&gt;PHPetite&lt;/a&gt; to convert Markdown&amp;nbsp;files into a single &lt;abbr title="Hyper Text Markup Language"&gt;HTML&lt;/abbr&gt; file with inline, compressed &lt;abbr title="Cascading Style Sheets"&gt;CSS&lt;/abbr&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Write posts in &lt;code&gt;/content&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;(Optional) include any images under the &lt;code&gt;/content/img/&lt;/code&gt; directory&lt;/li&gt;
 &lt;li&gt;From the command-line run:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code class="bash"&gt;bash build.sh&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This will generate both the single file &lt;abbr title="Hyper Text Markup Language"&gt;HTML&lt;/abbr&gt; page, along with an &lt;code&gt;atom.xml&lt;/code&gt; file for the use of an optional RSS feed.&lt;/p&gt;
+&lt;p&gt;These two files are output into the &lt;code&gt;_site&lt;/code&gt; directory.&lt;/p&gt;
 &lt;h2&gt;Advanced options&lt;/h2&gt;
 &lt;p&gt;Looking for more advanced configurations, such as creating custom pages, editing homepage content and styling? Take a look at the &lt;a href="https://github.com/bradleytaunt/phpetite" title="PHPetite at Github"&gt;Github repo&lt;/a&gt; or the official website &lt;a href="https://phpetite.org" title="PHPetite"&gt;phpetite.org&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Thank you, have a nice day.&lt;/p&gt;</content>
@@ -54,7 +56,7 @@
 &lt;p&gt;Additionally, images are properly enclosed in figure elements (with optional figcaption), and the &lt;code&gt;loading="lazy"&lt;/code&gt; attribute is added.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;,  this is an &lt;a href="#2021-01-11-hello-world"&gt;internal link&lt;/a&gt;, this is &lt;del&gt;not&lt;/del&gt;  &lt;code&gt;code&lt;/code&gt;, press &lt;kbd&gt;alt&lt;/kbd&gt;.&lt;/p&gt;
-&lt;figure&gt;&lt;img src="img/image.png" alt="This is the image alt text" title="This is the image title." width="1280" height="800" loading="lazy" /&gt;&lt;figcaption&gt;This is the image caption (line begins with a space)&lt;/figcaption&gt;
+&lt;figure&gt;&lt;img src="content/img/image.png" alt="This is the image alt text" title="This is the image title." width="1280" height="800" loading="lazy" /&gt;&lt;figcaption&gt;This is the image caption (line begins with a space)&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;&lt;img src="img/image-missing.png" alt="This is the alt text of a missing image" title="This is the missing image title." width="1280" height="800" loading="lazy" /&gt;&lt;/figure&gt;
 &lt;blockquote&gt;

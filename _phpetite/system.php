@@ -20,6 +20,10 @@ $posts = '';
 $pages = '';
 $pages_footer = '';
 $rss_items = '';
+$site_info = '';
+
+// Include custom site configurations
+include '_config.php';
 
 function create_slug($string){
   $string = strtolower($string);
@@ -32,20 +36,17 @@ function create_slug($string){
 }
 
 $files = [];
-foreach (new DirectoryIterator(__DIR__.'/content/') as $file) {
+foreach (new DirectoryIterator(__DIR__.'/../content/') as $file) {
   if ( $file->getType() == 'file' && strpos($file->getFilename(),'.md') ) {
     $files[] = $file->getFilename();
   }
 }
 rsort($files);
 
-// Include custom site configurations
-include('_config.php');
-
 foreach ($files as $file) {
 
   $filename_no_ext = substr($file, 0, strrpos($file, "."));    
-  $file_path = __DIR__.'/content/'.$file;
+  $file_path = __DIR__.'/../content/'.$file;
   $file = fopen($file_path, 'r');
   $post_title = trim(fgets($file),'#');
   $post_slug = create_slug($filename_no_ext.$post_title);
@@ -80,7 +81,7 @@ foreach ($files as $file) {
 }
 
 $files_pages = [];
-foreach (new DirectoryIterator(__DIR__.'/content/_pages/') as $file_page) {
+foreach (new DirectoryIterator(__DIR__.'/../content/_pages/') as $file_page) {
   if ( $file_page->getType() == 'file' && strpos($file_page->getFilename(),'.md') ) {
     $files_pages[] = $file_page->getFilename();
   }
@@ -90,7 +91,7 @@ rsort($files_pages);
 foreach ($files_pages as $file_page) {
 
   $filename_no_ext_page = substr($file_page, 0, strrpos($file_page, "."));    
-  $file_path_page = __DIR__.'/content/_pages/'.$file_page;
+  $file_path_page = __DIR__.'/../content/_pages/'.$file_page;
   $file_page = fopen($file_path_page, 'r');
   $page_title = trim(fgets($file_page),'# ');
   $page_slug = create_slug($filename_no_ext_page);
@@ -110,7 +111,7 @@ foreach ($files_pages as $file_page) {
   $parsedown->footnoteBackReferenceAttributes = function() {return ['id' => null];};
 
   $pages .= '<section tabindex="0" role="document" aria-label="'.$page_title.'" id="'.$page_slug.'">'.$parsedown->text(file_get_contents($file_path_page)).'</section>';
-  $pages_footer .='<a class="'.$page_slug.'" href="#'.$page_slug.'">'.$page_title.'</a><span class="divider">/</span>';
+  $pages_footer .='<a class="'.$page_slug.'" href="#'.$page_slug.'">'.trim($page_title, " \t\n\r").'</a><span class="divider">/</span>';
   
 }
 

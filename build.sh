@@ -1,2 +1,2 @@
-php phpetite.php > index.html
-php rss.php > atom.xml
+php _phpetite/phpetite.php > _site/index.html
+php _phpetite/rss.php > _site/atom.xml

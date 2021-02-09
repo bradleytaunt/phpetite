@@ -9,6 +9,6 @@
 
     // You probably don't need to change these :P
     $site_style = 'style.css';
-    $site_icon = 'img/icon.png';
+    $site_icon = 'content/img/icon.png';
 
 ?>

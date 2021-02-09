@@ -2,9 +2,25 @@
 
 PHPetite (/p/h/pəˈtēt/) is a single file, static blog generated from PHP. Based off the very minimal and awesome <a target="_blank" href="https://github.com/cadars/portable-php">portable-php</a>.
 
+## Key Features
+
+- Entire blog is rendered in a single HTML file
+- Inline, compressed CSS
+- All images converted into base64 encoding
+- Minimal requirements / no heavy build tools
+
 ## Core Principles
 
 The basic idea behind PHPetite is to keep the concept and workflow as simple as possible. Therefore, this project will try it's best to avoid bloat and feature creep. More elaborate and feature-rich blogging platforms should be used if your needs are not met with PHPetite.
+
+## Requirements
+
+1. `PHP 7.3` or higher
+2. If using Linux, you will require the following packages in order to convert your images to base64 encoding:
+    - PHP XML -> `sudo apt-get install php-xml`
+    - PHP mbstring -> `sudo apt-get install php-mbstring`
+
+That's really it!
 
 ## General Usage
 
@@ -15,13 +31,16 @@ You can find most basic explanations and details on working with the project at 
 Get [PHPetite](https://github.com/bradleytaunt/phpetite "PHPetite at Github") in order to convert a collection of Markdown files into a single HTML file with inline CSS.
 
 1. Write posts in `/content`
-2. From the command-line run:
+2. (Optional) include any images under the `/content/img/` directory
+3. From the command-line run:
 
 ```.bash
 bash build.sh
 ```
 
 This will generate both the single file HTML page, along with an `atom.xml` file for the use of an optional RSS feed.
+
+These two files are output into the `_site` directory.
 
 ---
 
@@ -76,7 +95,8 @@ footer .footer-links {
 ## TO DO
 
 - Proper accessibility audit
-- Add an option to inline assets (images, fonts) as Base64 strings
+- Allow custom fonts to be set as Base64 strings
+- ~~Set images as inline Base64 strings~~
 - ~~Basic RSS feed~~
 - ~~Automatically add new pages to footer nav~~
 - ~~Compress inline CSS~~
