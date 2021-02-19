@@ -7,6 +7,9 @@
     $site_author = 'Your Name';
     $site_email = 'hello@youremailaddress.com';
 
+    // Activate or disable images to base64 strings
+    $images_to_base64 = true;
+
     // You probably don't need to change these :P
     $site_style = 'style.css';
     $site_icon = 'content/img/icon.png';

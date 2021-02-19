@@ -73,20 +73,24 @@ $html = <<<EOD
 </html>
 EOD;
 
-$dom = new DOMDocument();
-libxml_use_internal_errors(true);
-$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
-libxml_clear_errors();
-$post_images = $dom->getElementsByTagName('img');
-foreach ($post_images as $image) {
-  $src = $image->getAttribute('src');
-  $type = pathinfo($src, PATHINFO_EXTENSION);
-  $data = file_get_contents($src);
-  $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-  $image->setAttribute("src", $base64); 
-}
+if ($images_to_base64 == true) {
+  $dom = new DOMDocument();
+  libxml_use_internal_errors(true);
+  $dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
+  libxml_clear_errors();
+  $post_images = $dom->getElementsByTagName('img');
+  foreach ($post_images as $image) {
+    $src = $image->getAttribute('src');
+    $type = pathinfo($src, PATHINFO_EXTENSION);
+    $data = file_get_contents($src);
+    $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+    $image->setAttribute("src", $base64); 
+  }
 
-$html = $dom->saveHTML();
-echo $html;
+  $html = $dom->saveHTML();
+  echo $html;
+} else {
+  echo $html;
+}
 
 ?>
