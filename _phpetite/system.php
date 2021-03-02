@@ -110,7 +110,9 @@ foreach ($files_pages as $file_page) {
   $parsedown->footnoteBackLinkAttributes = function() {return ['href' => '#'];};
   $parsedown->footnoteBackReferenceAttributes = function() {return ['id' => null];};
 
-  $pages .= '<section tabindex="0" role="document" aria-label="'.$page_title.'" id="'.$page_slug.'">'.$parsedown->text(file_get_contents($file_path_page)).'</section>';
+  if ($page_slug != 'home-content') {
+    $pages .= '<section tabindex="0" role="document" aria-label="'.$page_title.'" id="'.$page_slug.'">'.$parsedown->text(file_get_contents($file_path_page)).'</section>';
+  }
   $pages_footer .='<a class="'.$page_slug.'" href="#'.$page_slug.'">'.trim($page_title, " \t\n\r").'</a><span class="divider">/</span>';
   
 }
