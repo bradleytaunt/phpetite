@@ -139,10 +139,11 @@ ul.toc li a span {
 }
 
 ul.toc li time {
-  z-index: 1;
-  padding-left:.3em;
-  color: var(--textlight);
   background: var(--bgcolor);
+  color: var(--textlight);
+  font-variant-numeric: tabular-nums;
+  padding-left:.3em;
+  z-index: 1;
 }
 
 ul.toc li a:after {
