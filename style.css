@@ -6,33 +6,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-kerning: auto;
-  
-  --textdark:   #181818;
-  --textlight:  #686868;
-  --bgcolor:    #fff;
-  --highlight:  crimson;
-  
-}
-
-@media only screen and (prefers-color-scheme: dark) {
-  * {
-    --textdark:   #dadada;
-    --textlight:  #888;
-    --bgcolor:    #181818;
-    --highlight:  orange;
-  }
-  pre {
-    background:rgba(255,255,255,.03);
-  }
 }
 
 body {
-  color: var(--textdark);
-  background: var(--bgcolor);
-  font: 16px / 1.44 'Verdana', system-ui, sans-serif;
+  font: 16px / 1.44 Lucida Grande, system-ui, "Segoe UI", sans-serif;
   position: relative;
   max-width: 45em; /* column width */
   margin: 0 auto;
+}
+
+pre {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid;
 }
 
 /* Show & hide sections */
@@ -48,7 +33,7 @@ section:target, section:last-of-type {
   overflow: visible;
   padding: calc(5vw + 2.6em) 4vw 1.6em;
 }
-  
+
 section:focus {
   outline: 0;
 }
@@ -58,6 +43,13 @@ section:focus {
 section {
   overflow-wrap: break-word;
   width: 100%;
+}
+
+section .posted-on {
+  display: block;
+  font-size: 80%;
+  margin-bottom: -0.8em;
+  padding-top: 1em;
 }
 
 /* Vertical spacing */
@@ -78,7 +70,6 @@ header {
 /* Footer */
 
 footer {
-  color: var(--textlight);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -134,25 +125,23 @@ ul.toc li a {
 }
 
 ul.toc li a span {
-  background: var(--bgcolor);
   padding-right: .3em;
 }
 
 ul.toc li time {
-  background: var(--bgcolor);
-  color: var(--textlight);
   font-variant-numeric: tabular-nums;
   padding-left:.3em;
   z-index: 1;
 }
 
-ul.toc li a:after {
+ul.toc li:after {
   width: 100%;
   font-size: .55em;
   position: absolute;
-  bottom: .4em;
-  color: var(--textlight);
+  bottom: .3em;
   white-space: nowrap;
+  opacity: 0.3;
+  pointer-events: none;
   content:
   ' . . . . . . . . . . . . . . . . . . . . . .'
   ' . . . . . . . . . . . . . . . . . . . . . .'
@@ -165,7 +154,6 @@ ul.toc li a:after {
 /* General */
 
 a {
-  color: var(--highlight);
   text-decoration: none;
   overflow-wrap: break-word;
 }
@@ -178,7 +166,6 @@ a[href*="//"]:after {
   font-size: .65em;
   content: "\2197";
   display: inline-block;
-  color: var(--textlight);
 }
 
 a[href*="//"]:hover:after {
@@ -198,7 +185,7 @@ header h1 a {
 section h1 {
   font-size: 1.4em;
   line-height:1.5;
-  padding-top: 1em;
+  padding-top: 0;
 }
 
 header h1, h2, h3, h4, strong, b, dt {
@@ -227,7 +214,6 @@ li + li, li ol, li ul {
 }
 
 .footnotes li {
-  color: var(--textlight);
   margin-top:.5em;
   max-width:95%;
 }
@@ -243,20 +229,18 @@ img {
 }
 
 img:after { /* style offline images */
+  align-content:center;
+  border:1px dashed;
   content: attr(alt);
   display: grid;
-  align-content:center;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   font-size: .8em;
+  height: 100%;
+  left: 0;
+  position: absolute;
   text-align:center;
-  color: var(--textlight);
-  border:1px dashed var(--textlight);
-  background-color: var(--bgcolor);
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 figure {
@@ -303,7 +287,6 @@ sup {
 
 code, kbd {
   font-family: ui-monospace, SF Mono, SFMono-Regular, Menlo, Andale Mono, monospace;
-  color: var(--textlight);
   font-size: .9em;
   overflow-wrap: break-word;
 }
@@ -361,11 +344,11 @@ table {
 
 thead {
   text-align: left;
-  border-bottom: 1px solid var(--textlight);
+  border-bottom: 1px solid;
 }
 
 tr + tr {
-  border-top: 1px solid var(--textlight);
+  border-top: 1px solid;
 }
 
 th, td {
@@ -386,19 +369,15 @@ a.footnote-backref {
 /* Print */
 
 @media print {
-  
-  * {
-    --bgcolor: #fff;
-  }
-  
+
   header {
     position: relative;
   }
-  
+
   section {
     height: auto;
     overflow: visible;
-    
+
     page-break-after: always;
     page-break-inside: avoid;
     break-inside: avoid;
@@ -410,7 +389,7 @@ a.footnote-backref {
     page-break-inside: avoid;
     break-inside: avoid;
   }
-  
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -427,5 +406,13 @@ a.footnote-backref {
     height: 0;
     overflow: hidden;
     position: absolute;
+  }
+}
+
+@supports (color-scheme: dark light) {
+  @media screen and (prefers-color-scheme: dark) {
+    a:link {color: #9e9eff;}
+    a:visited {color: #d0adf0;}
+    a:active {color: red;}
   }
 }

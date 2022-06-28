@@ -1,9 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PHPetite</title>
+  <meta name="description" content="A single file, static blog generated from PHP">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIElEQVR42mNgGAWDDfwnEo4aMGrAqAGjBowEA0bBwAAARraOgF2Dq4IAAAAASUVORK5CYII=">
+  <!-- og tags -->
+  <meta property="og:title" content="PHPetite">
+  <meta property="og:description" content="A single file, static blog generated from PHP">
+  <!-- other -->
+  <meta name="twitter:card" content="summary">
+  <style>* {margin:0;padding:0;box-sizing:border-box;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-kerning:auto;}body {font:16px / 1.44 Lucida Grande, system-ui, "Segoe UI", sans-serif;position:relative;max-width:45em; margin:0 auto;}pre {background:rgba(255,255,255,0.1);border:1px solid;}section, section:target ~ section:last-of-type {height:0;overflow:hidden;padding:0;}section:target, section:last-of-type {height:auto;overflow:visible;padding:calc(5vw + 2.6em) 4vw 1.6em;}section:focus {outline:0;}section {overflow-wrap:break-word;width:100%;}section .posted-on {display:block;font-size:80%;margin-bottom:-0.8em;padding-top:1em;}section * + * {margin-top:.7em;}header {padding:5vw 4vw 0 4vw;position:absolute;width:100%;z-index:1;}footer {display:flex;flex-wrap:wrap;justify-content:space-between;padding:1em 4vw 5vw 4vw;}footer .footer-links {display:block;width:100%;}footer .footer-links a {display:inline-block;}footer .footer-links span.divider {display:inline-block;margin:0 5px;}footer .footer-links span.divider:last-of-type {display:none;}footer .footer-links a.home-content, footer .footer-links a.home-content + span.divider {display:none;}footer * + * {margin-top:0;}ul.toc {overflow:hidden;}ul.toc * + * {margin:0;}ul.toc li {line-height:1.5;position:relative;display:flex;align-items:flex-end;margin:0;}ul.toc li a {flex:1;}ul.toc li a span {padding-right:.3em;}ul.toc li time {font-variant-numeric:tabular-nums;padding-left:.3em;z-index:1;}ul.toc li:after {width:100%;font-size:.55em;position:absolute;bottom:.3em;white-space:nowrap;opacity:0.3;pointer-events:none;content:' . . . . . . . . . . . . . . . . . . . . . .'' . . . . . . . . . . . . . . . . . . . . . .'' . . . . . . . . . . . . . . . . . . . . . .'' . . . . . . . . . . . . . . . . . . . . . .'' . . . . . . . . . . . . . . . . . . . . . .'' . . . . . . . . . . . . . . . . . . . . . .';}a {text-decoration:none;overflow-wrap:break-word;}@media (hover:hover) and (pointer:fine) {a:hover {text-decoration:underline;}}a[href*="//"]:after {font-size:.65em;content:"\2197";display:inline-block;}a[href*="//"]:hover:after {color:inherit;}header h1 {margin-bottom:1em;}header h1 a {font-weight:normal;display:block;}section h1 {font-size:1.4em;line-height:1.5;padding-top:0;}header h1, h2, h3, h4, strong, b, dt {font-size:1em;}* + h2, * + h3, * + h4 {margin-top:1.4em;}h2.cute, h3 {text-transform:uppercase;letter-spacing:.06em;font-size:.9em;font-weight:400;}li, dd {margin-left:1.5em;}li + li, li ol, li ul {margin-top:.1em;}.footnotes li {margin-top:.5em;max-width:95%;}img {display:block;max-width:100%;min-height:6em;height:auto;position:relative;}img:after { align-content:center;border:1px dashed;content:attr(alt);display:grid;font-size:.8em;height:100%;left:0;position:absolute;text-align:center;top:0;width:100%;z-index:2;}figure {padding:1em;}figcaption, small, .footnotes {font-size:.865em;}blockquote {padding:0 1em;}cite {font-style:normal;}abbr[title] {text-decoration:none;cursor:help;}a abbr[title] {cursor:pointer;color:inherit;}hr {border:0;height:0;border-bottom:1px solid;opacity:.1;margin:1.4em 0;}sup {line-height:1;font-size:.75em;margin-left:.05em;}code, kbd {font-family:ui-monospace, SF Mono, SFMono-Regular, Menlo, Andale Mono, monospace;font-size:.9em;overflow-wrap:break-word;}kbd {box-shadow:0 .5px 1px;border-radius:2px;padding:.05em .325em;font-size:.85em;margin:0 .1em;}pre {line-height:1.55;overflow:auto;background:rgba(0,0,0,.03);padding:.5em .85em .6em .85em;border-radius:4px;}pre code {font-size:.9em;position:relative;display:block;overflow-wrap:normal;}pre code:after {content:attr(class);position:absolute;right:-.6em;top:-.3em;text-transform:uppercase;font-size:.7em;opacity:.45;}input, select, textarea, button {font:inherit;font-size:.85em;line-height:inherit;border:0;box-shadow:0 0 .05em;padding:.2em .4em;width:100%;}table {border-collapse:collapse;min-width:100%;margin:1em 0;}thead {text-align:left;border-bottom:1px solid;}tr + tr {border-top:1px solid;}th, td {padding:.4em .3em .2em;}sup a {color:currentColor;pointer-events:none;}a.footnote-backref {display:none;}@media print {header {position:relative;}section {height:auto;overflow:visible;page-break-after:always;page-break-inside:avoid;break-inside:avoid;display:block;padding:2em 4vw;}section * {page-break-inside:avoid;break-inside:avoid;}}@media only screen and (max-width:500px) {footer .footer-links a { display:block; margin:0.2em 0; }footer .footer-links span.divider { display:none; }blockquote, figure { padding-left:4vw; padding-right:4vw; }ul.toc li {align-items:flex-start;flex-direction:column-reverse;}ul.toc li a { padding-bottom:1em; }ul.toc li time { font-size:.8em; padding-left:0; }ul.toc li a:after {height:0;overflow:hidden;position:absolute;}}@supports (color-scheme:dark light) {@media screen and (prefers-color-scheme:dark) {a:link {color:#9e9eff;}a:visited {color:#d0adf0;}a:active {color:red;}}}</style>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="#home">PHPetite</a>
+    </h1>
+  </header>
+  <main>
+    <section tabindex="0" role="document" aria-label=" Hello, World!
+" id="2021-01-11-hello-world"><time class="posted-on" datetime="2021-01-11">2021-01-11</time><h1>Hello, World!</h1>
+<p>A&nbsp;<strong>"Hello, World!" program</strong>&nbsp;generally is a&nbsp;<a href="https://en.wikipedia.org/wiki/Computer_program" title="Computer program">computer program</a>&nbsp;that outputs or displays the message "Hello, World!". Such a program is very simple in most&nbsp;<a href="https://en.wikipedia.org/wiki/Programming_language" title="Programming language">programming languages</a>, and is often used to illustrate the basic&nbsp;<a href="https://en.wikipedia.org/wiki/Syntax" title="Syntax">syntax</a>&nbsp;of a programming language. It is often the first program written by people learning to code.<sup><a href="#" class="footnote-ref">1</a></sup> &nbsp;It can also be used as a&nbsp;<a href="https://en.wikipedia.org/wiki/Sanity_test" title="Sanity test">sanity test</a>&nbsp;to make sure that a computer language is correctly installed, and that the operator understands how to use it.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li>
+<p>James A Langbridge (3 December 2013).&nbsp;<a href="https://books.google.com/books?id=y51NAgAAQBAJ&amp;pg=PA74"><em>Professional Embedded ARM Development</em></a>.&nbsp;<a href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/9781118887820" title="Special:BookSources/9781118887820">9781118887820</a>.&nbsp;<a href="#" class="footnote-backref">&#8617;</a></p>
+</li>
+</ol>
+</div></section><section tabindex="0" role="document" aria-label=" How to generate this blog
+" id="2021-01-10-how-to-generate-this-blog"><time class="posted-on" datetime="2021-01-10">2021-01-10</time><h1>How to generate this blog</h1>
+<p>Get <a href="https://github.com/bradleytaunt/phpetite" title="PHPetite at Github">PHPetite</a> to convert Markdown&nbsp;files into a single <abbr title="Hyper Text Markup Language">HTML</abbr> file with inline, compressed <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
+<ol>
+<li>Write posts in <code>/content</code></li>
+<li>(Optional) include any images under the <code>/content/img/</code> directory</li>
+<li>From the command-line run:</li>
+</ol>
+<pre><code class="shell">make</code></pre>
+<p>This will generate both the single file <abbr title="Hyper Text Markup Language">HTML</abbr> page, along with an <code>atom.xml</code> file for the use of an optional RSS feed.</p>
+<p>These two files are output into the <code>_site</code> directory.</p>
+<h2>Advanced options</h2>
+<p>Looking for more advanced configurations, such as creating custom pages, editing homepage content and styling? Take a look at the <a href="https://github.com/bradleytaunt/phpetite" title="PHPetite at Github">Github repo</a> or the official website <a href="https://phpetite.org" title="PHPetite">phpetite.org</a>.</p>
+<p>Thank you, have a nice day.</p></section><section tabindex="0" role="document" aria-label=" Markdown examples
+" id="2021-01-09-markdown-examples"><time class="posted-on" datetime="2021-01-09">2021-01-09</time><h1><abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr> examples</h1>
+<p>On top of plain <abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr>, <a href="https://michelf.ca/projects/php-markdown/extra"><abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr> Extra</a> adds support for footnotes, abbreviations, definition lists, tables, <code>class</code> and <code>id</code> attributes, fenced code blocks, and <abbr title="Markdown is a lightweight markup language for creating formatted text using a plain-text editor">Markdown</abbr> inside <abbr title="Hypertext Markup Language">HTML</abbr> blocks.</p>
+<p>Additionally, images are properly enclosed in figure elements (with optional figcaption), and the <code>loading="lazy"</code> attribute is added.</p>
+<hr>
+<p>This is <strong>bold</strong>, <em>italic</em>,  this is an <a href="#2021-01-11-hello-world">internal link</a>, this is <del>not</del>  <code>code</code>, press <kbd>alt</kbd>.</p>
+<figure><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAAMgBAMAAACOttLIAAAAMFBMVEXx8fHr6+vGxsbZ2dnAwMDf39+FhYWysrK5ubnl5eWNjY2lpaXNzc2VlZWdnZ3T09MWD5k/AAAGdElEQVR4Ae3YA3Ss6R3H8V+0u7msbbvp2sxatZGzyfnf7eQm6z2o7Ta13aZrO4vaOqqNqW133juzdyfLuTU+n9GL53mOvsE8AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA6wIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwA1ul+W2vn8GMbJ34G81Urun6/jDs8x4nZhBvKq1ENgk1TPdF+DibJYZrukM4i41Efi7A7zL+iwz9JmvZxC3nr9eNglMTk4eXJ23/fsCHFvIcjfMQIYmsslgZaXRBAgC5P82wLX77rmQ5OX3SzJ2p2N/lp6t7t/c3++ZE7nc2v2e+dNm0DZ52X57pWdkm85rh2x97E+TXx77njR++dxD0+hcvX1ePpE0t+6eq0KAe7SrDkuyz3Qyfl5V693pqjOSkc9Uzd0/XWs/0727cna0qr6Xrs1mO6+ZW1bNXu+xVa2m0D9V1Snp6Fyo3feZ6l06M1eBAF9cS1W36wb4uvripTXTF+Cv6weX1HS6PlgnX1TrmwDvMndJzV2vP8DzTv5Mnbl4crtOTFZVa2mx3p2MLdYXFw9vAhyuuUtrfiFXhgBPul1uVG/tBnjeYckja+GKABffnnxwLhuM1+nJXVrJytZpC9mldu8LcG4mI4tzh2W8va7Zmv5phustya3rwox85jNTybatidyyWfBKEOB0kvPWNwF2m1tbt7s8wO5XlC3q/mmsXZpoTiaysr7WTPxaX4DNuG2bt1fNJX84O8mzp5O7zKapcCr5zDuTnDcduFKATXP59UwvwCPT6Avw3VmuSXJl/TRJe6o/wOv13tZUuradSdqPT7KqpjLWtJlXrQtc3TbMTdZ1A1ycXh7gWH3+agO8XpLz+gOcbVacb976Ahzq/s2tqYzW/ZOsngtcXYBNQE2A+9S3JvoDzHl11v1zhQfttu+GAHO1Ac5uXHZsq18eP5ORempv4MraqmPXClxbgFtU1VnX6wvwllWti9Ozql0dAwT4yeqY6a7dC7ArcG0B5jXtqtP7Asx2n6n6djYYaledfOkAAd6mqrXUXh7g0gaBaw0wQ7/9TE30BZjxDy22rpfG5nVZMjJAgMfP/jTZtgnwyHS0mwADgwTYdHZkX4Adt6l3p3GTuQwU4FB9uvcteMPBUE11d3JgkACb8Po/u0N6SWX4ugPsjr/LTG/jb7Smsra5dB0Q4KqlnyZDfQFusbSQjfU8tLutfJ0BjjULDH1mJtm2tZB8sKaSxROTvP6cZPwjgWsIcKzemdy03r0xwOH6evKmWkhjdb07Y+3rDjCfWZ88tmaak3dstd1ceyq5y/z9O3Onk0e27h+4+gBzfJ2z7+JsNgY41G4de2CTUmO45p/bPmKAAO9S331x/Xqm+7253tkM3LyZW0cm+/hjfO3sA9ZRy/cBq7V7uvapar17gABHq+qUzZpsRz9T6xaagc3cekeSX9dPA8mqyTTGJyeaUA5Ktt4/ycuWlu6ensl3J3nw0vnvSc/4gZ2bkxO9qe/vddnMbV5ZddDly75i6ayF0b3SMb5Vr9Txey498XpJ1j4l8C/Vfkv+HeBjZycZrzPy7wDbzl8veVO9O/8OsLLeNblvrcu/BQw9uzqemn8PGHtBnfy8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwH+qv+ASmOBBNn44AAAAASUVORK5CYII=" alt="This is the image alt text" title="This is the image title." width="1280" height="800" loading="lazy"><figcaption>This is the image caption (line begins with a space)</figcaption>
+</figure>
+<blockquote>
+<p>This text is in a blockquote.</p>
+</blockquote>
+<h2>This is a level 2 heading</h2>
+<h3>This is a level 3 heading</h3>
+<ul>
+<li>This</li>
+<li>is</li>
+<li>a list</li>
+</ul>
+<ol start="0">
+<li>This</li>
+<li>is</li>
+<li>an</li>
+<li>ordered list</li>
+</ol>
+<pre><code class="txt">This is
+    preformatted
+  text.</code></pre>
+<table>
+<thead>
+<tr>
+<th>this is a table</th>
+<th>header</th>
+<th style="text-align: right;">this column is right-aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>these</td>
+<td>content</td>
+<td style="text-align: right;">1234</td>
+</tr>
+<tr>
+<td>are</td>
+<td>cells</td>
+<td style="text-align: right;">56789</td>
+</tr>
+</tbody>
+</table>
+<p>This sentence has a footnote.<sup><a href="#" class="footnote-ref">1</a></sup></p>
+<div class="footnotes">
+<hr>
+<ol>
+<li>
+<p>This is a footnote&nbsp;<a href="#" class="footnote-backref">&#8617;</a></p>
+</li>
+</ol>
+</div></section>
+    <section tabindex="0" role="document" aria-label="About
+" id="about"><h1>About</h1>
+<p>This blog is a single file, statically rendered <abbr title="Hyper Text Markup Language">HTML</abbr> page. The <abbr title="Hyper Text Markup Language">HTML</abbr> &amp; CSS were generated with <a href="https://github.com/bradleytaunt/phpetite">PHPetite</a>. Please raise any issues you come across in the official Github repo or help by contributing!</p>
+<p>Cheers!</p></section>
+    <section tabindex="0" role="document" aria-label="Home" id="home">
+      <div class="site-info"><h1>A Single File Blog</h1>
+<p>PHPetite (/p/h/p&#601;&#712;t&#275;t/) is a single file, static blog generated from PHP. Based off the very minimal and awesome <a target="_blank" href="https://github.com/cadars/portable-php">portable-php</a></p>
+<p>You can edit this homepage content in <code>content/_pages/home-content.md</code> (or remove it entirely). The choice is yours.</p></div><hr>
+      <nav>
+        <ul class="toc">
+          <li><a href="#2021-01-11-hello-world"><span> Hello, World!
+</span></a> <time datetime="2021-01-11">2021-01-11</time></li><li><a href="#2021-01-10-how-to-generate-this-blog"><span> How to generate this blog
+</span></a> <time datetime="2021-01-10">2021-01-10</time></li><li><a href="#2021-01-09-markdown-examples"><span> Markdown examples
+</span></a> <time datetime="2021-01-09">2021-01-09</time></li>
+        </ul>
+      </nav>
+    </section>
+  </main>
+  <footer>
+    <small>Last updated on June 28, 2022</small>
+    <div class="footer-links">
+        <small><a class="home-content" href="#home-content">A Single File Blog</a><span class="divider">/</span><a class="about" href="#about">About</a><span class="divider">/</span></small>
+    </div>
+  </footer>
+</body>
+</html>
 <?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
     <title>PHPetite</title>
     <link href="https://yourdomain.com/atom.xml" rel="self"/>
     <link href="https://yourdomain.com"/>
-    <updated>2021-03-23T16:50:56+00:00</updated>
+    <updated>2022-06-28T16:50:36+00:00</updated>
     <id>https://yourdomain.com/</id>
     <author>
       <name>Your Name</name>
@@ -38,7 +167,7 @@
 &lt;li&gt;(Optional) include any images under the &lt;code&gt;/content/img/&lt;/code&gt; directory&lt;/li&gt;
 &lt;li&gt;From the command-line run:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code class="bash"&gt;bash build.sh&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="shell"&gt;make&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This will generate both the single file &lt;abbr title="Hyper Text Markup Language"&gt;HTML&lt;/abbr&gt; page, along with an &lt;code&gt;atom.xml&lt;/code&gt; file for the use of an optional RSS feed.&lt;/p&gt;
 &lt;p&gt;These two files are output into the &lt;code&gt;_site&lt;/code&gt; directory.&lt;/p&gt;
 &lt;h2&gt;Advanced options&lt;/h2&gt;
@@ -58,7 +187,6 @@
 &lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;,  this is an &lt;a href="#2021-01-11-hello-world"&gt;internal link&lt;/a&gt;, this is &lt;del&gt;not&lt;/del&gt;  &lt;code&gt;code&lt;/code&gt;, press &lt;kbd&gt;alt&lt;/kbd&gt;.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="content/img/image.png" alt="This is the image alt text" title="This is the image title." width="1280" height="800" loading="lazy" /&gt;&lt;figcaption&gt;This is the image caption (line begins with a space)&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;figure&gt;&lt;img src="img/image-missing.png" alt="This is the alt text of a missing image" title="This is the missing image title." width="1280" height="800" loading="lazy" /&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This text is in a blockquote.&lt;/p&gt;
 &lt;/blockquote&gt;
