@@ -1,6 +1,7 @@
 <?php
     // Include custom site configurations
-    include 'phpetite.php';
+include ($_SERVER['DOCUMENT_ROOT'].'_phpetite/_config.php');
+    include ($_SERVER['DOCUMENT_ROOT'].'_phpetite/system.php');
 
     echo '<?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
