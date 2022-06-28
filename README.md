@@ -30,12 +30,13 @@ You can find most basic explanations and details on working with the project at 
 
 Get [PHPetite](https://github.com/bradleytaunt/phpetite "PHPetite at Github") in order to convert a collection of Markdown files into a single HTML file with inline CSS.
 
-1. Write posts in `/content`
-2. (Optional) include any images under the `/content/img/` directory
-3. From the command-line run:
+1. Make proper edits to the `/_phpetite/_config.php` file
+2. Write posts in `/content`
+3. (Optional) include any images under the `/content/img/` directory
+4. From the command-line run:
 
-```.bash
-bash build.sh
+```.shell
+make
 ```
 
 This will generate both the single file HTML page, along with an `atom.xml` file for the use of an optional RSS feed.
@@ -92,12 +93,7 @@ footer .footer-links {
 
 ---
 
-## TO DO
+## TODOs
 
-- Proper accessibility audit
-- Allow custom fonts to be set as Base64 strings
-- ~~Set images as inline Base64 strings~~
-- ~~Basic RSS feed~~
-- ~~Automatically add new pages to footer nav~~
-- ~~Compress inline CSS~~
+See the official, on-going feature list here: [https://phpetite.org/#about](https://phpetite.org/#about)
 
